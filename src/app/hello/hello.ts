@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Hello {
 
+  protected username: string = 'Matheus';
+  protected isDisabled: boolean = false;
+
+  protected onClick(): void {
+    this.isDisabled = !this.isDisabled;
+  }
 }
