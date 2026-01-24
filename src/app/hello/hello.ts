@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -13,5 +13,19 @@ export class Hello {
 
   protected onClick(): void {
     this.isDisabled = !this.isDisabled;
+  }
+
+  protected count = signal(0);
+
+  decreaseCounter() {
+    this.count.update(n => n - 1);
+  }
+
+  incrementCounter() {
+    this.count.update(n => n + 1);
+  }
+
+  resetCounter() {
+    this.count.set(0);
   }
 }
