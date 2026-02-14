@@ -21,8 +21,7 @@ export class Hello {
 
   private countLog = effect(() => {
     console.log('Count changed', this.count());
-    
-  })
+  });
 
   protected decreaseCounter() {
     this.count.update(n => n - 1);
